@@ -6,6 +6,7 @@ import Login from "./pages/Login/Login";
 import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
 import Footer from "./shared/Footer";
 import Navbar from "./shared/Navbar";
+import NotFound from "./shared/NotFound";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="blog" element={<Blog></Blog>} />
         <Route path="portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="login" element={<Login></Login>} />
+        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>
     </div>

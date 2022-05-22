@@ -2,21 +2,44 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const SignUp = () => {
   const {
     register,
     handleSubmit,
+
     formState: { errors },
   } = useForm();
 
-  // user login and password
-  const onSubmit = (data) => {};
+  const onSubmit = async (data) => {};
   return (
     <div className="container mx-auto px-4 flex justify-center items-center h-[90vh]">
       <div className="card w-96  bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="text-center text-2xl">Login</h2>
+          <h2 className="text-center text-2xl">Sign Up</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
+            {/* name field */}
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                className="input input-bordered w-full max-w-xs"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is required",
+                  },
+                })}
+              />
+              <label className="label">
+                {errors.name?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
+            </div>
             {/* email address */}
             <div className="form-control w-full max-w-xs">
               <label className="label">
@@ -60,11 +83,11 @@ const Login = () => {
                 {...register("password", {
                   required: {
                     value: true,
-                    message: "password is required",
+                    message: "Password must be 6 character",
                   },
                   minLength: {
                     value: 6,
-                    message: "Password must be 6 character",
+                    message: "Please enter minimum 6 character password ",
                   },
                 })}
               />
@@ -81,30 +104,23 @@ const Login = () => {
                 )}
               </label>
             </div>
-            <div>
-              <Link to="/forgetPassword" className="text-secondary">
-                Forget password
-              </Link>
-            </div>
 
-            <button className="btn btn-block btn-secondary mt-2">Login</button>
+            <button className="btn btn-block btn-secondary mt-2">
+              Sign Up
+            </button>
             <p className="mt-3">
-              New to Doctors Portal?{" "}
+              All ready have an account?{" "}
               <span className="text-primary">
-                <Link className="text-secondary" to="/signUp">
-                  Create new account
+                <Link className="text-secondary" to="/login">
+                  Please Login
                 </Link>
               </span>
             </p>
           </form>
-          <div className="divider">OR</div>
-          <button className="btn btn-block btn-outline btn-secondary uppercase">
-            Continue with google
-          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

@@ -12,7 +12,7 @@ const Banner = () => {
       <div className="hero-content text-center text-white">
         <div className="max-w-[800px]">
           <p className="py-6 text-2xl italic">
-            Welcome To Our Electri Manufacture!
+            Welcome To Our Electric Manufacture!
           </p>
           <h1 className="text-5xl lg:text-6xl font-bold mb-5">
             IT'S NICE TO MEET YOU

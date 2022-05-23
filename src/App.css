@@ -11,3 +11,35 @@
 .section-dark-white {
   background-color: #f8f9fa;
 }
+.radial-progress-html {
+  --value: 90;
+  --size: 8rem;
+}
+.radial-progress-css {
+  --value: 90;
+  --size: 8rem;
+}
+.radial-progress-javaScript {
+  --value: 70;
+  --size: 8rem;
+}
+.radial-progress-bootstrap {
+  --value: 85;
+  --size: 8rem;
+}
+.radial-progress-reactJs {
+  --value: 78;
+  --size: 8rem;
+}
+.radial-progress-jquery {
+  --value: 90;
+  --size: 8rem;
+}
+.radial-progress-tailwind {
+  --value: 90;
+  --size: 8rem;
+}
+.radial-progress-php {
+  --value: 40;
+  --size: 8rem;
+}

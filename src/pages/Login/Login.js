@@ -89,7 +89,7 @@ const Login = () => {
 
             <button className="btn btn-block btn-secondary mt-2">Login</button>
             <p className="mt-3">
-              New to Doctors Portal?{" "}
+              Are You New?{" "}
               <span className="text-primary">
                 <Link className="text-secondary" to="/signUp">
                   Create new account

@@ -1,9 +1,12 @@
 import React from "react";
+import Eduction from "./Eduction";
+import Myskill from "./Myskill";
 
 const MyPortfolio = () => {
   return (
     <div>
-      <h1>this is portfolio page</h1>
+      <Myskill></Myskill>
+      <Eduction></Eduction>
     </div>
   );
 };

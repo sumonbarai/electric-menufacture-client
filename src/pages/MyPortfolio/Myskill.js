@@ -8,49 +8,49 @@ const Myskill = () => {
         <div className="mySkill grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="text-center">
             <div className="mb-3 text-3xl">Html</div>
-            <div class="radial-progress text-secondary radial-progress-html">
+            <div className="radial-progress text-secondary radial-progress-html">
               90%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">Css</div>
-            <div class="radial-progress text-secondary radial-progress-css">
+            <div className="radial-progress text-secondary radial-progress-css">
               90%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">JavaScript</div>
-            <div class="radial-progress text-secondary radial-progress-javaScript">
+            <div className="radial-progress text-secondary radial-progress-javaScript">
               70%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">Bootstrap</div>
-            <div class="radial-progress text-secondary radial-progress-bootstrap">
+            <div className="radial-progress text-secondary radial-progress-bootstrap">
               85%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">React Js</div>
-            <div class="radial-progress text-secondary radial-progress-reactJs">
+            <div className="radial-progress text-secondary radial-progress-reactJs">
               78%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">Jquery</div>
-            <div class="radial-progress text-secondary radial-progress-jquery">
+            <div className="radial-progress text-secondary radial-progress-jquery">
               80%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">Tailwind Css</div>
-            <div class="radial-progress text-secondary radial-progress-tailwind">
+            <div className="radial-progress text-secondary radial-progress-tailwind">
               90%
             </div>
           </div>
           <div className="text-center">
             <div className="mb-3 text-3xl">Php</div>
-            <div class="radial-progress text-secondary radial-progress-php">
+            <div className="radial-progress text-secondary radial-progress-php">
               40%
             </div>
           </div>

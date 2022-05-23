@@ -1,15 +1,27 @@
 import React from "react";
+import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import auth from "../../firebase.init";
+import Spinner from "../../shared/Spinner/Spinner";
 
 const ForgetPassword = () => {
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    await sendPasswordResetEmail(data.email);
+    toast.success("Successfully send password reset email!");
+    reset();
+  };
+  if (sending) {
+    return <Spinner></Spinner>;
+  }
   return (
     <div className="container mx-auto px-4 flex justify-center items-center h-[90vh]">
       <div className="card w-96  bg-base-100 shadow-xl">

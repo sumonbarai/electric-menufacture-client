@@ -9,6 +9,7 @@ import MyPortfolio from "./pages/MyPortfolio/MyPortfolio";
 import Footer from "./shared/Footer";
 import Navbar from "./shared/Navbar";
 import NotFound from "./shared/NotFound";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>
+      <Toaster />
     </div>
   );
 }

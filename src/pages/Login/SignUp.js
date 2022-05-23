@@ -1,8 +1,18 @@
 import React from "react";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import Spinner from "../../shared/Spinner/Spinner";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
   const {
     register,
     handleSubmit,
@@ -10,7 +20,19 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    const displayName = data.name;
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName });
+  };
+  // user creating loading
+  if (loading || updating) {
+    return <Spinner></Spinner>;
+  }
+  // user go to home page
+  if (user) {
+    navigate("/");
+  }
   return (
     <div className="container mx-auto px-4 flex justify-center items-center h-[90vh]">
       <div className="card w-96  bg-base-100 shadow-xl">
@@ -35,7 +57,7 @@ const SignUp = () => {
               <label className="label">
                 {errors.name?.type === "required" && (
                   <span className="label-text-alt text-red-500">
-                    {errors.email.message}
+                    {errors.name.message}
                   </span>
                 )}
               </label>

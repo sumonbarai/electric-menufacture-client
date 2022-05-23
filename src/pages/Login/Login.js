@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Spinner from "../../shared/Spinner/Spinner";
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     handleSubmit,
@@ -15,18 +20,24 @@ const Login = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (googleUser) {
-      navigate("/");
-    }
-  }, []);
-
-  if (googleLoading) {
+  // user navigation
+  if (googleUser || user) {
+    navigate("/");
+  }
+  // loading spinner code
+  if (googleLoading || loading) {
     return <Spinner></Spinner>;
   }
 
   // user login and password
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
+  // login related error message
+  let errorMessage;
+  if (googleError || error) {
+    errorMessage = error.message || googleError.message;
+  }
   return (
     <div className="container mx-auto px-4 flex justify-center items-center h-[90vh]">
       <div className="card w-96  bg-base-100 shadow-xl">
@@ -104,6 +115,9 @@ const Login = () => {
             </div>
 
             <button className="btn btn-block btn-secondary mt-2">Login</button>
+            {errorMessage && (
+              <p className="text-red-500 mt-1">{errorMessage}</p>
+            )}
             <p className="mt-3">
               Are You New?{" "}
               <span className="text-primary">

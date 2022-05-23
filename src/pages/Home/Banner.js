@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import bannerBg from "../../assets/images/header-bg.jpg";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="hero min-h-[80vh]"
@@ -15,8 +17,13 @@ const Banner = () => {
           <h1 className="text-5xl lg:text-6xl font-bold mb-5">
             IT'S NICE TO MEET YOU
           </h1>
-          <button className="btn btn-secondary text-white uppercase">
-            Tell me more
+          <button
+            onClick={() => {
+              navigate("/portfolio");
+            }}
+            className="btn btn-secondary text-white uppercase"
+          >
+            About me more
           </button>
         </div>
       </div>

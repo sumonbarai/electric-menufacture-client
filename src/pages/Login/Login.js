@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Spinner from "../../shared/Spinner/Spinner";
 
 const Login = () => {
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (googleUser) {
+      navigate("/");
+    }
+  }, []);
+
+  if (googleLoading) {
+    return <Spinner></Spinner>;
+  }
 
   // user login and password
   const onSubmit = (data) => {};
@@ -98,7 +114,10 @@ const Login = () => {
             </p>
           </form>
           <div className="divider">OR</div>
-          <button className="btn btn-block btn-outline btn-secondary uppercase">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="btn btn-block btn-outline btn-secondary uppercase"
+          >
             Continue with google
           </button>
         </div>

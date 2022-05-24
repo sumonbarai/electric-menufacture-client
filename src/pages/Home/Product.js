@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { picture, name, available, price, description } = product;
+  const { _id, picture, name, available, price, description, minimum } =
+    product;
+  const navigate = useNavigate();
+
+  const handleOrder = (_id) => {
+    navigate(`/purchase/${_id}`);
+  };
+
   return (
     <div className="mx-auto">
       <div className="card card-compact mx-w-96 bg-base-100 shadow-xl">
@@ -14,14 +22,19 @@ const Product = ({ product }) => {
             Available: <span>{available}</span>
           </p>
           <p className="font-bold">
-            Minimum Order: <span>20</span>
+            Minimum Order: <span>{minimum}</span>
           </p>
           <p className="font-bold">
-            Price: <span>{price}</span>
+            Price: <span>{price} per psc</span>
           </p>
-          <p>{description}</p>
+          <p>{description.slice(0, 200)}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-secondary">Order Now</button>
+            <button
+              onClick={() => handleOrder(_id)}
+              className="btn btn-secondary"
+            >
+              Order Now
+            </button>
           </div>
         </div>
       </div>

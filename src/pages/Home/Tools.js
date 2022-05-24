@@ -9,7 +9,6 @@ const Tools = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  console.log(products);
   return (
     <section className="section-padding">
       <div className="tools-area container mx-auto px-4">

@@ -10,6 +10,8 @@ import Footer from "./shared/Footer";
 import Navbar from "./shared/Navbar";
 import NotFound from "./shared/NotFound";
 import { Toaster } from "react-hot-toast";
+import Purchase from "./pages/Purchase/Purchase";
+import RequireAuth from "./shared/RequireAuth";
 
 function App() {
   return (
@@ -22,6 +24,14 @@ function App() {
         <Route path="portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="login" element={<Login></Login>} />
         <Route path="signUp" element={<SignUp></SignUp>} />
+        <Route
+          path="purchase/:product_id"
+          element={
+            <RequireAuth>
+              <Purchase></Purchase>
+            </RequireAuth>
+          }
+        />
         <Route
           path="forgetPassword"
           element={<ForgetPassword></ForgetPassword>}

@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -19,10 +19,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   // user navigation
   if (googleUser || user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   // loading spinner code
   if (googleLoading || loading) {

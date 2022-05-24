@@ -1,27 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CustomerReview from "./CustomerReview";
 
 const Reviews = () => {
-  const reviews = [
-    {
-      picture: "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
-      rating: "4/5",
-      description:
-        "Electric Switches. Fixit has the largest collection of all types of best quality switches in BD including Four Gang Switch, Switch for Motor, Floating Switch etc.",
-    },
-    {
-      picture: "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
-      rating: "4/5",
-      description:
-        "Electric Switches. Fixit has the largest collection of all types of best quality switches in BD including Four Gang Switch, Switch for Motor, Floating Switch etc.",
-    },
-    {
-      picture: "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
-      rating: "4/5",
-      description:
-        "Electric Switches. Fixit has the largest collection of all types of best quality switches in BD including Four Gang Switch, Switch for Motor, Floating Switch etc.",
-    },
-  ];
+  const [reviews, setReviews] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/review")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
     <section className="section-padding section-dark-white">
       <div className="reviews-area container mx-auto px-4">

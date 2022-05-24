@@ -7,7 +7,11 @@ import Spinner from "../../shared/Spinner/Spinner";
 
 const MyOrder = () => {
   const [user] = useAuthState(auth);
-  const { data: orders, isLoading } = useQuery("order", () => {
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery("order", () => {
     return fetch(`http://localhost:5000/order?email=${user.email}`).then(
       (res) => res.json()
     );
@@ -19,7 +23,9 @@ const MyOrder = () => {
 
   return (
     <div>
-      <h2 className="text-3xl text-center uppercase mb-8">Your total Order </h2>
+      <h2 className="text-3xl text-center uppercase mb-8">
+        Your total Order({orders.length})
+      </h2>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
@@ -34,7 +40,12 @@ const MyOrder = () => {
           </thead>
           <tbody>
             {orders?.map((order, index) => (
-              <OrderRow key={index} order={order} index={index}></OrderRow>
+              <OrderRow
+                key={index}
+                order={order}
+                index={index}
+                refetch={refetch}
+              ></OrderRow>
             ))}
           </tbody>
         </table>

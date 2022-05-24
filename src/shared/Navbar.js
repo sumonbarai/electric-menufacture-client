@@ -21,9 +21,16 @@ const Navbar = () => {
       </li>
       <li>
         <Link className="text-lg" to="/portfolio">
-          My Portfolio
+          Portfolio
         </Link>
       </li>
+      {user && (
+        <li>
+          <Link className="text-lg" to="/dashboard">
+            Dashboard
+          </Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button

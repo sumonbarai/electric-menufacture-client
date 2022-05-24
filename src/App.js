@@ -12,6 +12,10 @@ import NotFound from "./shared/NotFound";
 import { Toaster } from "react-hot-toast";
 import Purchase from "./pages/Purchase/Purchase";
 import RequireAuth from "./shared/RequireAuth";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import MyOrder from "./pages/Dashboard/MyOrder";
+import AddReview from "./pages/Dashboard/AddReview";
+import MyProfile from "./pages/Dashboard/MyProfile";
 
 function App() {
   return (
@@ -32,6 +36,19 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyOrder></MyOrder>} />
+          <Route path="myOrder" element={<MyOrder></MyOrder>} />
+          <Route path="addReview" element={<AddReview></AddReview>} />
+          <Route path="myProfile" element={<MyProfile></MyProfile>} />
+        </Route>
         <Route
           path="forgetPassword"
           element={<ForgetPassword></ForgetPassword>}

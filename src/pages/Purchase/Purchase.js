@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
@@ -13,8 +14,38 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [product_id]);
-  const { _id, picture, name, available, price, description, minimum } =
-    product;
+  const { picture, name, available, price, description, minimum } = product;
+
+  const handlePlaceOrder = (event) => {
+    event.preventDefault();
+    const quantity = event.target.quantity.value;
+    if (quantity >= minimum) {
+      const orderInformation = {
+        email: user.email,
+        productName: name,
+        mobile: event.target.number.value,
+        quantity: quantity,
+        picture: picture,
+      };
+      const url = `http://localhost:5000/order`;
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderInformation),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.acknowledged) {
+            toast.success("Your Order Successfully Place");
+            event.target.reset();
+          }
+        });
+    } else {
+      toast.error("Please order minimum Order Limit");
+    }
+  };
   return (
     <div className="section-padding">
       <div className="container px-4 mx-auto">
@@ -44,25 +75,28 @@ const Purchase = () => {
             </div>
           </div>
           <div>
-            <form>
+            <form onSubmit={handlePlaceOrder}>
               <h3 className="uppercase text-center text-2xl pb-5 mt-4 md:mt-52">
                 user information
               </h3>
               <input
                 type="text"
+                name="address"
                 placeholder="Enter Your Address"
                 className="input input-bordered w-full mb-3"
                 required
               />
               <input
                 type="text"
+                name="number"
                 placeholder="Enter Your Mobile Number"
                 className="input input-bordered w-full mb-3"
                 required
               />
               <input
                 type="text"
-                placeholder="Order Quantity over minimum Quantity"
+                name="quantity"
+                placeholder="Order Quantity over minimum Order"
                 className="input input-bordered w-full mb-3"
                 required
               />

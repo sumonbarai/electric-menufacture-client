@@ -19,31 +19,36 @@ const Purchase = () => {
   const handlePlaceOrder = (event) => {
     event.preventDefault();
     const quantity = event.target.quantity.value;
-    if (quantity >= minimum) {
-      const orderInformation = {
-        email: user.email,
-        productName: name,
-        mobile: event.target.number.value,
-        quantity: quantity,
-        picture: picture,
-      };
-      const url = `http://localhost:5000/order`;
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderInformation),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.acknowledged) {
-            toast.success("Your Order Successfully Place");
-            event.target.reset();
-          }
-        });
+
+    if (parseFloat(quantity) >= parseFloat(minimum)) {
+      if (parseFloat(quantity) <= parseFloat(available)) {
+        const orderInformation = {
+          email: user.email,
+          productName: name,
+          mobile: event.target.number.value,
+          quantity: quantity,
+          picture: picture,
+        };
+        const url = `http://localhost:5000/order`;
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(orderInformation),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              toast.success("Your Order Successfully Place");
+              event.target.reset();
+            }
+          });
+      } else {
+        toast.error("Your order is over available Order Limit");
+      }
     } else {
-      toast.error("Please order minimum Order Limit");
+      toast.error("Your order is lower minimum Order Limit");
     }
   };
   return (

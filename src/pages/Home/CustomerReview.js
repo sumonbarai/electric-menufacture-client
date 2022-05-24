@@ -11,7 +11,7 @@ const CustomerReview = ({ review }) => {
           </div>
         </div>
         <div className="card-body ">
-          <p className="font-bold">Rating: {rating}</p>
+          <p className="font-bold">Rating: {rating}/5</p>
           <p>{description}</p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Spinner from "../../shared/Spinner/Spinner";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -21,11 +22,15 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const token = useToken(user || googleUser);
 
   // user navigation
-  if (googleUser || user) {
+  if (user || googleUser) {
     navigate(from, { replace: true });
   }
+  // useEffect(() => {
+
+  // }, [from, navigate, token]);
   // loading spinner code
   if (googleLoading || loading) {
     return <Spinner></Spinner>;

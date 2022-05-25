@@ -63,7 +63,7 @@ const AddReview = () => {
           <textarea
             {...register("feedback", { required: true, maxLength: 520 })}
             className="textarea textarea-bordered mb-2 w-full"
-            placeholder="Give me Your feedback our product"
+            placeholder="Give me Your feedback under 520 letter"
           ></textarea>
           <input type="file" {...register("img", { required: true })} />
           <div className="card-actions justify-end">

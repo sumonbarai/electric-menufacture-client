@@ -6,11 +6,12 @@ import {
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Spinner from "../../shared/Spinner/Spinner";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
   const {
@@ -19,6 +20,7 @@ const SignUp = () => {
 
     formState: { errors },
   } = useForm();
+  const token = useToken(user);
 
   const onSubmit = async (data) => {
     const displayName = data.name;

@@ -31,24 +31,28 @@ const Navbar = () => {
           </Link>
         </li>
       )}
-      <li>
-        {user ? (
+
+      {user ? (
+        <li>
           <button
             onClick={() => {
               signOut(auth);
               navigate("/");
+              localStorage.removeItem("assessToken");
             }}
             className="btn btn-link justify-start items-center"
             style={{ textDecoration: "none" }}
           >
             Logout
           </button>
-        ) : (
+        </li>
+      ) : (
+        <li>
           <Link className="text-lg" to="/login">
             Login
           </Link>
-        )}
-      </li>
+        </li>
+      )}
     </>
   );
 

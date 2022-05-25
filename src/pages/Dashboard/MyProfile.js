@@ -13,7 +13,7 @@ const MyProfile = () => {
     isLoading,
     data: information,
     refetch,
-  } = useQuery("information", () =>
+  } = useQuery("informations", () =>
     fetch(`http://localhost:5000/profileinformation?email=${user?.email}`).then(
       (res) => res.json()
     )

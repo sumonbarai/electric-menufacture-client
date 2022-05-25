@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -20,21 +20,24 @@ const SignUp = () => {
 
     formState: { errors },
   } = useForm();
-  const token = useToken(user);
+  const [token] = useToken(user);
 
   const onSubmit = async (data) => {
     const displayName = data.name;
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName });
   };
+  useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate, token]);
   // user creating loading
   if (loading || updating) {
     return <Spinner></Spinner>;
   }
   // user go to home page
-  if (user) {
-    navigate("/");
-  }
+
   return (
     <div className="container mx-auto px-4 flex justify-center items-center h-[90vh]">
       <div className="card w-96  bg-base-100 shadow-xl">

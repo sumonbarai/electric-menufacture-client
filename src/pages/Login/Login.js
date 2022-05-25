@@ -22,15 +22,15 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  const token = useToken(user || googleUser);
+  const [token] = useToken(user || googleUser);
 
   // user navigation
-  if (user || googleUser) {
-    navigate(from, { replace: true });
-  }
-  // useEffect(() => {
 
-  // }, [from, navigate, token]);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [from, navigate, token]);
   // loading spinner code
   if (googleLoading || loading) {
     return <Spinner></Spinner>;

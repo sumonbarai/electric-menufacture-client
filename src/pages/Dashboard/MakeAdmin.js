@@ -1,8 +1,6 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { useQuery } from "react-query";
-import auth from "../../firebase.init";
 import Spinner from "../../shared/Spinner/Spinner";
 
 const MakeAdmin = () => {

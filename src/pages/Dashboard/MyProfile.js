@@ -8,7 +8,7 @@ import UpdateModal from "./UpdateModal";
 
 const MyProfile = () => {
   const [user] = useAuthState(auth);
-  const [modalToggle, setModalToggle] = useState(true);
+  const [modalToggle, setModalToggle] = useState(null);
   const {
     isLoading,
     data: information,
@@ -75,6 +75,7 @@ const MyProfile = () => {
           </div>
           <div className="card-actions justify-end">
             <label
+              onClick={() => setModalToggle(information)}
               htmlFor="profileUpdateModal"
               className="btn modal-button btn-secondary"
             >

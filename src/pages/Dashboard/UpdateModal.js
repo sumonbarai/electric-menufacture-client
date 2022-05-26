@@ -23,7 +23,7 @@ const UpdateModal = ({ user, setModalToggle, refetch }) => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Successfully Updated Your Profile information");
-          setModalToggle(false);
+          setModalToggle(null);
           refetch();
         }
         console.log(data);

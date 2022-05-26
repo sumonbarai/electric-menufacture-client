@@ -1,9 +1,23 @@
 [
   {
-    "email": "sumonbarai80@gmail.com",
-    "education": "MBA, National University",
-    "location": "Khulna, Bangladesh",
-    "number": "01815223111",
-    "linkedin": "https://www.linkedin.com/"
+    "picture": "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
+    "name": "Fan sumon",
+    "available": "200",
+    "price": "69",
+    "description": "We are manufacture of Electric Cut Out Fuse in India. It is made by Porcelain also have copper component. It is help's to save power cut safe your accessories in home."
+  },
+  {
+    "picture": "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
+    "name": "Fan sumon",
+    "available": "200",
+    "price": "69",
+    "description": "We are manufacture of Electric Cut Out Fuse in India. It is made by Porcelain also have copper component. It is help's to save power cut safe your accessories in home."
+  },
+  {
+    "picture": "https://i.ibb.co/fMzZ6L8/fan-regulator-dimmer.jpg",
+    "name": "Fan sumon",
+    "available": "200",
+    "price": "69",
+    "description": "We are manufacture of Electric Cut Out Fuse in India. It is made by Porcelain also have copper component. It is help's to save power cut safe your accessories in home."
   }
 ]

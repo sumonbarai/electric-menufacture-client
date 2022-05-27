@@ -16,7 +16,7 @@ const Demo = () => {
   return (
     <section className="section-padding section-dark-white">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Demo Website</h2>
+        <h2 className="section-title">my portfolio website</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div className="text-center">
             <img className="demo-website" src={gym} alt="" />

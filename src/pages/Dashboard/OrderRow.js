@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const OrderRow = ({ order, index, refetch }) => {
-  const { _id, picture, productName, quantity } = order;
+  const { _id, picture, productName, quantity, status, transactionId } = order;
   const navigate = useNavigate();
 
   const handleCancel = () => {
@@ -38,14 +38,34 @@ const OrderRow = ({ order, index, refetch }) => {
       <td>{productName}</td>
       <td>{quantity}</td>
       <td>
-        <button onClick={handlePayment} className="btn btn-xs btn-secondary">
-          unpaid
-        </button>
+        {status ? (
+          <button
+            disabled
+            onClick={handlePayment}
+            className="btn btn-xs btn-secondary"
+          >
+            {status === "success" && transactionId ? transactionId : "unpaid"}
+          </button>
+        ) : (
+          <button onClick={handlePayment} className="btn btn-xs btn-secondary">
+            unpaid
+          </button>
+        )}
       </td>
       <td>
-        <button onClick={handleCancel} className="btn btn-xs btn-secondary">
-          cancel
-        </button>
+        {status ? (
+          <button
+            disabled
+            onClick={handleCancel}
+            className="btn btn-xs btn-secondary"
+          >
+            cancel
+          </button>
+        ) : (
+          <button onClick={handleCancel} className="btn btn-xs btn-secondary">
+            cancel
+          </button>
+        )}
       </td>
     </tr>
   );

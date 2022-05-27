@@ -12,26 +12,26 @@ const Contact = () => {
           <input
             type="text"
             placeholder="NAME*"
-            class="input input-bordered w-full mb-3"
+            className="input input-bordered w-full mb-3"
           />
           <input
             type="email"
             placeholder="EMAIL*"
-            class="input input-bordered w-full mb-3"
+            className="input input-bordered w-full mb-3"
           />
           <input
             type="text"
             placeholder="PHONE*"
-            class="input input-bordered w-full mb-3"
+            className="input input-bordered w-full mb-3"
           />
           <textarea
             type="text"
             cols="1"
             rows="5"
             placeholder="HOW CAN WE HELP?*"
-            class="textarea textarea-bordered w-full mb-3"
+            className="textarea textarea-bordered w-full mb-3"
           ></textarea>
-          <button class="btn btn-secondary rounded-2xl">LET'S TALK</button>
+          <button className="btn btn-secondary rounded-2xl">LET'S TALK</button>
         </form>
       </div>
     </section>

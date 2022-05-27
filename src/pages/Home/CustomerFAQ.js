@@ -8,12 +8,12 @@ const CustomerFAQ = () => {
         <div className="faq-question max-w-[800px] mx-auto">
           <div
             tabIndex="0"
-            class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
+            className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               What is a FAQ page?
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 FAQ stands for “Frequently Asked Questions.” An FAQ is a list of
                 commonly asked questions and answers on a website about topics
@@ -24,12 +24,12 @@ const CustomerFAQ = () => {
           </div>
           <div
             tabIndex="1"
-            class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
+            className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               Why you should make an FAQ page
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 An FAQ page is a time-saving customer service tactic that
                 provides the most commonly asked questions and answers for
@@ -45,12 +45,12 @@ const CustomerFAQ = () => {
           </div>
           <div
             tabIndex="2"
-            class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
+            className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               Prevents negative reviews
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 When looking through negative reviews, theres almost always one
                 thing in common— the problem couldve been avoided. For example,
@@ -65,12 +65,12 @@ const CustomerFAQ = () => {
           </div>
           <div
             tabIndex="3"
-            class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
+            className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3"
           >
-            <div class="collapse-title text-xl font-medium">
+            <div className="collapse-title text-xl font-medium">
               FAQs are good for SEO
             </div>
-            <div class="collapse-content">
+            <div className="collapse-content">
               <p>
                 In order to take full advantage of your FAQ pages ability to
                 improve website SEO, create one page with all of the questions

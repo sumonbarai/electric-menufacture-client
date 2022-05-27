@@ -28,6 +28,7 @@ const Purchase = () => {
           mobile: event.target.number.value,
           quantity: quantity,
           picture: picture,
+          price: price,
         };
         const url = `http://localhost:5000/order`;
         fetch(url, {

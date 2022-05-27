@@ -34,7 +34,7 @@ function App() {
         <Route path="portfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="login" element={<Login></Login>} />
         <Route path="signUp" element={<SignUp></SignUp>} />
-        <Route path="payment/:id" element={<Payment></Payment>} />
+        <Route path="payment/:orderId" element={<Payment></Payment>} />
         <Route
           path="purchase/:product_id"
           element={

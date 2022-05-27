@@ -11,8 +11,8 @@ const MyOrder = () => {
     data: orders,
     isLoading,
     refetch,
-  } = useQuery("order", () => {
-    return fetch(`http://localhost:5000/order?email=${user.email}`).then(
+  } = useQuery("myOrder", () => {
+    return fetch(`http://localhost:5000/myOrder?email=${user?.email}`).then(
       (res) => res.json()
     );
   });

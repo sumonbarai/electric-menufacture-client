@@ -5,8 +5,8 @@ const useAdmin = (user) => {
   const email = user?.email;
 
   const { isLoading, error, data } = useQuery("users", () =>
-    fetch(`http://localhost:5000/users?email=${email}`).then((res) =>
-      res.json()
+    fetch(`https://agile-earth-47801.herokuapp.com/users?email=${email}`).then(
+      (res) => res.json()
     )
   );
 

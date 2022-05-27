@@ -12,9 +12,9 @@ const MyOrder = () => {
     isLoading,
     refetch,
   } = useQuery("myOrder", () => {
-    return fetch(`http://localhost:5000/myOrder?email=${user?.email}`).then(
-      (res) => res.json()
-    );
+    return fetch(
+      `https://agile-earth-47801.herokuapp.com/myOrder?email=${user?.email}`
+    ).then((res) => res.json());
   });
 
   if (isLoading) {

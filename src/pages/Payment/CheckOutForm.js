@@ -12,7 +12,7 @@ const CheckOutForm = ({ paymentOrder }) => {
     parseFloat(paymentOrder.price) * parseFloat(paymentOrder.quantity);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/create-payment-intent`, {
+    fetch(`https://agile-earth-47801.herokuapp.com/create-payment-intent`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const CheckOutForm = ({ paymentOrder }) => {
       setTransactionId(paymentIntent.id);
       setSuccess("!Congratulation payment success");
       // set order collection status and transaction id set
-      const url = `http://localhost:5000/order/${paymentOrder._id}`;
+      const url = `https://agile-earth-47801.herokuapp.com/order/${paymentOrder._id}`;
       fetch(url, {
         method: "PUT",
         headers: {

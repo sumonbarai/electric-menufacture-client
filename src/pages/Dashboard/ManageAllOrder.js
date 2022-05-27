@@ -9,7 +9,9 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`http://localhost:5000/order`).then((res) => res.json());
+    return fetch(`https://agile-earth-47801.herokuapp.com/order`).then((res) =>
+      res.json()
+    );
   });
 
   if (isLoading) {

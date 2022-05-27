@@ -29,7 +29,7 @@ const AddReview = () => {
             rating: data.ratting,
             description: data.feedback,
           };
-          const url = `http://localhost:5000/review`;
+          const url = `https://agile-earth-47801.herokuapp.com/review`;
           fetch(url, {
             method: "POST",
             headers: {

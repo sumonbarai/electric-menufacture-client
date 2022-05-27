@@ -11,7 +11,9 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("product", () => {
-    return fetch(`http://localhost:5000/product`).then((res) => res.json());
+    return fetch(`https://agile-earth-47801.herokuapp.com/product`).then(
+      (res) => res.json()
+    );
   });
 
   if (isLoading) {

@@ -9,7 +9,7 @@ const OrderRow = ({ order, index, refetch }) => {
   const handleCancel = () => {
     const Confirm = window.confirm("Are You sure cancel?");
     if (Confirm) {
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://agile-earth-47801.herokuapp.com/order/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

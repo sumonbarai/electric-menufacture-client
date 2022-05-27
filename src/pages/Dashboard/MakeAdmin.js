@@ -9,7 +9,9 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`http://localhost:5000/user`).then((res) => res.json());
+    return fetch(`https://agile-earth-47801.herokuapp.com/user`).then((res) =>
+      res.json()
+    );
   });
 
   if (isLoading) {
@@ -19,7 +21,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm("Are You sure make admin ?");
     if (confirm) {
       const roll = { roll: "admin" };
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://agile-earth-47801.herokuapp.com/user/${email}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +41,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm("Are You sure remove admin ?");
     if (confirm) {
       const roll = { roll: "" };
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://agile-earth-47801.herokuapp.com/user/${email}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

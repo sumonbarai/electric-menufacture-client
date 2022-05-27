@@ -9,7 +9,7 @@ const Purchase = () => {
   const [product, setProduct] = useState({});
   const [user] = useAuthState(auth);
   useEffect(() => {
-    const url = `http://localhost:5000/product/${product_id}`;
+    const url = `https://agile-earth-47801.herokuapp.com/product/${product_id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -30,7 +30,7 @@ const Purchase = () => {
           picture: picture,
           price: price,
         };
-        const url = `http://localhost:5000/order`;
+        const url = `https://agile-earth-47801.herokuapp.com/order`;
         fetch(url, {
           method: "POST",
           headers: {

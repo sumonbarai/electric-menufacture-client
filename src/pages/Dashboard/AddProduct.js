@@ -19,7 +19,7 @@ const AddProduct = () => {
       minimum: data.minimum,
       picture: data.picture,
     };
-    const url = `http://localhost:5000/product`;
+    const url = `https://agile-earth-47801.herokuapp.com/product`;
     fetch(url, {
       method: "POST",
       headers: {

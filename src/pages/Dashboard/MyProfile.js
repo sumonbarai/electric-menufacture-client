@@ -14,9 +14,9 @@ const MyProfile = () => {
     data: information,
     refetch,
   } = useQuery("informations", () =>
-    fetch(`http://localhost:5000/profileinformation?email=${user?.email}`).then(
-      (res) => res.json()
-    )
+    fetch(
+      `https://agile-earth-47801.herokuapp.com/profileinformation?email=${user?.email}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Spinner></Spinner>;

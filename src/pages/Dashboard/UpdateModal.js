@@ -11,7 +11,7 @@ const UpdateModal = ({ user, setModalToggle, refetch }) => {
       number: event.target.number.value,
       linkedin: event.target.linkedin.value,
     };
-    const url = `http://localhost:5000/profileinformation?email=${user?.email}`;
+    const url = `https://agile-earth-47801.herokuapp.com/profileinformation?email=${user?.email}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -8,11 +8,7 @@ const Tools = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const url = "https://agile-earth-47801.herokuapp.com/product";
-    fetch(url, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("assessToken")}`,
-      },
-    })
+    fetch(url)
       .then((res) => {
         return res.json();
       })

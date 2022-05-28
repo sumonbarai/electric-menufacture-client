@@ -4,11 +4,7 @@ import CustomerReview from "./CustomerReview";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://agile-earth-47801.herokuapp.com/review", {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("assessToken")}`,
-      },
-    })
+    fetch("https://agile-earth-47801.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

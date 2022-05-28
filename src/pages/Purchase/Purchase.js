@@ -1,7 +1,8 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import auth from "../../firebase.init";
 
 const Purchase = () => {
@@ -35,10 +36,13 @@ const Purchase = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("assessToken")}`,
           },
           body: JSON.stringify(orderInformation),
         })
-          .then((res) => res.json())
+          .then((res) => {
+            return res.json();
+          })
           .then((data) => {
             if (data.acknowledged) {
               toast.success("Your Order Successfully Place");

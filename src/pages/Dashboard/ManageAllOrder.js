@@ -9,9 +9,11 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`https://agile-earth-47801.herokuapp.com/order`).then((res) =>
-      res.json()
-    );
+    return fetch(`https://agile-earth-47801.herokuapp.com/order`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("assessToken")}`,
+      },
+    }).then((res) => res.json());
   });
 
   if (isLoading) {

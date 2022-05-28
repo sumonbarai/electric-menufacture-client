@@ -1,14 +1,24 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import Product from "./Product";
 
 const Tools = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const url = "https://agile-earth-47801.herokuapp.com/product";
-    fetch(url)
-      .then((res) => res.json())
+    fetch(url, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("assessToken")}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
       .then((data) => setProducts(data));
   }, []);
+
   return (
     <section className="section-padding">
       <div className="tools-area container mx-auto px-4">

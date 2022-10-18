@@ -48,3 +48,6 @@
   height: 100%;
   object-fit: cover;
 } */
+.active {
+  color: #fab115;
+}

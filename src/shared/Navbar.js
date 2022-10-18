@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 
 const Navbar = () => {
@@ -10,25 +10,25 @@ const Navbar = () => {
   const menu = (
     <>
       <li>
-        <Link className="text-lg" to="/">
+        <NavLink className="text-lg" to="/">
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="text-lg" to="/blog">
+        <NavLink className="text-lg" to="/blog">
           Blog
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="text-lg" to="/portfolio">
+        <NavLink className="text-lg" to="/portfolio">
           Portfolio
-        </Link>
+        </NavLink>
       </li>
       {user && (
         <li>
-          <Link className="text-lg" to="/dashboard">
+          <NavLink className="text-lg" to="/dashboard">
             Dashboard
-          </Link>
+          </NavLink>
         </li>
       )}
 
@@ -48,9 +48,9 @@ const Navbar = () => {
         </li>
       ) : (
         <li>
-          <Link className="text-lg" to="/login">
+          <NavLink className="text-lg" to="/login">
             Login
-          </Link>
+          </NavLink>
         </li>
       )}
     </>

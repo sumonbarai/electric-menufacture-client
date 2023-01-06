@@ -9,7 +9,7 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`https://agile-earth-47801.herokuapp.com/order`, {
+    return fetch(`https://electric-manufacture-server.vercel.app/order`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("assessToken")}`,
       },

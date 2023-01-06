@@ -13,7 +13,7 @@ const MyOrder = () => {
     refetch,
   } = useQuery("myOrder", () => {
     return fetch(
-      `https://agile-earth-47801.herokuapp.com/myOrder?email=${user?.email}`
+      `https://electric-manufacture-server.vercel.app/myOrder?email=${user?.email}`
     ).then((res) => res.json());
   });
 

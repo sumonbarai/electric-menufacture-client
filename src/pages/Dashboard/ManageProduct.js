@@ -11,7 +11,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("product", () => {
-    return fetch(`https://agile-earth-47801.herokuapp.com/product`).then(
+    return fetch(`https://electric-manufacture-server.vercel.app/product`).then(
       (res) => res.json()
     );
   });

@@ -2,7 +2,7 @@
 
 website live link [Electric manufacture](https://electric-manufacture.web.app/)
 
-website backend link [server link](https://agile-earth-47801.herokuapp.com/)
+website backend link [server link](https://electric-manufacture-server.vercel.app/)
 
 ## Website Purpose:
 

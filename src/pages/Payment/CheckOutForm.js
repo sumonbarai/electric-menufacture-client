@@ -12,13 +12,16 @@ const CheckOutForm = ({ paymentOrder }) => {
     parseFloat(paymentOrder.price) * parseFloat(paymentOrder.quantity);
 
   useEffect(() => {
-    fetch(`https://agile-earth-47801.herokuapp.com/create-payment-intent`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      `https://electric-manufacture-server.vercel.app/create-payment-intent`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.clientSecret) {
@@ -65,7 +68,7 @@ const CheckOutForm = ({ paymentOrder }) => {
       setTransactionId(paymentIntent.id);
       setSuccess("!Congratulation payment success");
       // set order collection status and transaction id set
-      const url = `https://agile-earth-47801.herokuapp.com/order/${paymentOrder._id}`;
+      const url = `https://electric-manufacture-server.vercel.app/order/${paymentOrder._id}`;
       fetch(url, {
         method: "PUT",
         headers: {

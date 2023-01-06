@@ -16,9 +16,9 @@ const Payment = () => {
     error,
     data: paymentOrder,
   } = useQuery("paymentOrder", () =>
-    fetch(`https://agile-earth-47801.herokuapp.com/order/${orderId}`).then(
-      (res) => res.json()
-    )
+    fetch(
+      `https://electric-manufacture-server.vercel.app/order/${orderId}`
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Spinner></Spinner>;

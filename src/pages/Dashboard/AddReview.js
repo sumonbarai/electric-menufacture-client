@@ -29,7 +29,7 @@ const AddReview = () => {
             rating: data.ratting,
             description: data.feedback,
           };
-          const url = `https://agile-earth-47801.herokuapp.com/review`;
+          const url = `https://electric-manufacture-server.vercel.app/review`;
           fetch(url, {
             method: "POST",
             headers: {

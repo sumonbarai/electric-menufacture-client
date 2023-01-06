@@ -5,7 +5,7 @@ const ConfirmDeleteModal = ({ modal, setModal, refetch }) => {
   const handleConfirmDelete = () => {
     const id = modal._id;
 
-    fetch("https://agile-earth-47801.herokuapp.com/product/" + id, {
+    fetch("https://electric-manufacture-server.vercel.app/product/" + id, {
       method: "DELETE",
     })
       .then((res) => res.json())

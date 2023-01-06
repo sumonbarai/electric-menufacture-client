@@ -9,8 +9,8 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`https://agile-earth-47801.herokuapp.com/user`).then((res) =>
-      res.json()
+    return fetch(`https://electric-manufacture-server.vercel.app/user`).then(
+      (res) => res.json()
     );
   });
 
@@ -21,7 +21,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm("Are You sure make admin ?");
     if (confirm) {
       const roll = { roll: "admin" };
-      fetch(`https://agile-earth-47801.herokuapp.com/user/${email}`, {
+      fetch(`https://electric-manufacture-server.vercel.app/user/${email}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const MakeAdmin = () => {
     const confirm = window.confirm("Are You sure remove admin ?");
     if (confirm) {
       const roll = { roll: "" };
-      fetch(`https://agile-earth-47801.herokuapp.com/user/${email}`, {
+      fetch(`https://electric-manufacture-server.vercel.app/user/${email}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

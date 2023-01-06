@@ -15,7 +15,7 @@ const MyProfile = () => {
     refetch,
   } = useQuery("informations", () =>
     fetch(
-      `https://agile-earth-47801.herokuapp.com/profileinformation?email=${user?.email}`
+      `https://electric-manufacture-server.vercel.app/profileinformation?email=${user?.email}`
     ).then((res) => res.json())
   );
   if (isLoading) {

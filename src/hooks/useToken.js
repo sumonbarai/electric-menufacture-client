@@ -6,13 +6,16 @@ const useToken = (user) => {
   const tokenEmail = { email: email };
   useEffect(() => {
     if (email) {
-      fetch(`https://agile-earth-47801.herokuapp.com/users?email=${email}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(tokenEmail),
-      })
+      fetch(
+        `https://electric-manufacture-server.vercel.app/users?email=${email}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(tokenEmail),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.result.acknowledged) {

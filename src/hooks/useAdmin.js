@@ -5,9 +5,9 @@ const useAdmin = (user) => {
   const email = user?.email;
 
   const { isLoading, error, data } = useQuery("users", () =>
-    fetch(`https://agile-earth-47801.herokuapp.com/users?email=${email}`).then(
-      (res) => res.json()
-    )
+    fetch(
+      `https://electric-manufacture-server.vercel.app/users?email=${email}`
+    ).then((res) => res.json())
   );
 
   return [data];

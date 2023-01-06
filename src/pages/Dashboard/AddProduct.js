@@ -19,7 +19,7 @@ const AddProduct = () => {
       minimum: data.minimum,
       picture: data.picture,
     };
-    const url = `https://agile-earth-47801.herokuapp.com/product`;
+    const url = `https://electric-manufacture-server.vercel.app/product`;
     fetch(url, {
       method: "POST",
       headers: {

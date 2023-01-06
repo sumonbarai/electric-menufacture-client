@@ -7,7 +7,7 @@ import Product from "./Product";
 const Tools = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    const url = "https://agile-earth-47801.herokuapp.com/product";
+    const url = "https://electric-manufacture-server.vercel.app/product";
     fetch(url)
       .then((res) => {
         return res.json();

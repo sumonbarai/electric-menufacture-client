@@ -7,7 +7,7 @@ import Product from "./Product";
 const Tools = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    const url = "https://electric-manufacture-server.vercel.app/product";
+    const url = "https://electric-manufacture-server.onrender.com/product";
     fetch(url)
       .then((res) => {
         return res.json();

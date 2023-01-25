@@ -6,7 +6,7 @@ const useAdmin = (user) => {
 
   const { isLoading, error, data } = useQuery("users", () =>
     fetch(
-      `https://electric-manufacture-server.vercel.app/users?email=${email}`
+      `https://electric-manufacture-server.onrender.com/users?email=${email}`
     ).then((res) => res.json())
   );
 

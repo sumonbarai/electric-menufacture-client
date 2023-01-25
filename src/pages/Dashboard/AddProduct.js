@@ -19,7 +19,7 @@ const AddProduct = () => {
       minimum: data.minimum,
       picture: data.picture,
     };
-    const url = `https://electric-manufacture-server.vercel.app/product`;
+    const url = `https://electric-manufacture-server.onrender.com/product`;
     fetch(url, {
       method: "POST",
       headers: {

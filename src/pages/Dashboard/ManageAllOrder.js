@@ -9,7 +9,7 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("order", () => {
-    return fetch(`https://electric-manufacture-server.vercel.app/order`, {
+    return fetch(`https://electric-manufacture-server.onrender.com/order`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("assessToken")}`,
       },

@@ -11,9 +11,9 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("product", () => {
-    return fetch(`https://electric-manufacture-server.vercel.app/product`).then(
-      (res) => res.json()
-    );
+    return fetch(
+      `https://electric-manufacture-server.onrender.com/product`
+    ).then((res) => res.json());
   });
 
   if (isLoading) {

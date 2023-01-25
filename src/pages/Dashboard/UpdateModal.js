@@ -11,7 +11,7 @@ const UpdateModal = ({ user, setModalToggle, refetch }) => {
       number: event.target.number.value,
       linkedin: event.target.linkedin.value,
     };
-    const url = `https://electric-manufacture-server.vercel.app/profileinformation?email=${user?.email}`;
+    const url = `https://electric-manufacture-server.onrender.com/profileinformation?email=${user?.email}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -13,7 +13,7 @@ const CheckOutForm = ({ paymentOrder }) => {
 
   useEffect(() => {
     fetch(
-      `https://electric-manufacture-server.vercel.app/create-payment-intent`,
+      `https://electric-manufacture-server.onrender.com/create-payment-intent`,
       {
         method: "POST",
         headers: {
@@ -68,7 +68,7 @@ const CheckOutForm = ({ paymentOrder }) => {
       setTransactionId(paymentIntent.id);
       setSuccess("!Congratulation payment success");
       // set order collection status and transaction id set
-      const url = `https://electric-manufacture-server.vercel.app/order/${paymentOrder._id}`;
+      const url = `https://electric-manufacture-server.onrender.com/order/${paymentOrder._id}`;
       fetch(url, {
         method: "PUT",
         headers: {

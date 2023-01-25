@@ -7,7 +7,7 @@ const ManageAllOrderRow = ({ order, index, refetch }) => {
   const confirmPayment = () => {
     const confirm = window.confirm("Are you sure ?");
     if (confirm) {
-      const url = `https://electric-manufacture-server.vercel.app/order/${_id}`;
+      const url = `https://electric-manufacture-server.onrender.com/order/${_id}`;
       fetch(url, {
         method: "PUT",
         headers: {

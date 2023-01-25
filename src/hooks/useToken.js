@@ -7,7 +7,7 @@ const useToken = (user) => {
   useEffect(() => {
     if (email) {
       fetch(
-        `https://electric-manufacture-server.vercel.app/users?email=${email}`,
+        `https://electric-manufacture-server.onrender.com/users?email=${email}`,
         {
           method: "PUT",
           headers: {

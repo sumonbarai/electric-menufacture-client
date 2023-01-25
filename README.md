@@ -2,7 +2,7 @@
 
 website live link [Electric manufacture](https://electric-manufacture.web.app/)
 
-website backend link [server link](https://electric-manufacture-server.vercel.app/)
+website backend link [server link](https://electric-manufacture-server.onrender.com/)
 
 ## Website Purpose:
 

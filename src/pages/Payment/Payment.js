@@ -17,7 +17,7 @@ const Payment = () => {
     data: paymentOrder,
   } = useQuery("paymentOrder", () =>
     fetch(
-      `https://electric-manufacture-server.vercel.app/order/${orderId}`
+      `https://electric-manufacture-server.onrender.com/order/${orderId}`
     ).then((res) => res.json())
   );
   if (isLoading) {

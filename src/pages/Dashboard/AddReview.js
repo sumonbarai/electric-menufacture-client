@@ -29,7 +29,7 @@ const AddReview = () => {
             rating: data.ratting,
             description: data.feedback,
           };
-          const url = `https://electric-manufacture-server.vercel.app/review`;
+          const url = `https://electric-manufacture-server.onrender.com/review`;
           fetch(url, {
             method: "POST",
             headers: {
